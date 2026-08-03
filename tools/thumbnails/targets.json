@@ -1,0 +1,86 @@
+[
+ {
+  "id": "extended-turntaking",
+  "thumbnail": "thumbnails/extended-turntaking.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "facial-turntaking",
+  "thumbnail": "thumbnails/facial-turntaking.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "feedback-plugin",
+  "thumbnail": "thumbnails/feedback-plugin.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "interview-tool",
+  "thumbnail": "thumbnails/interview-tool.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "interview-notification",
+  "thumbnail": "thumbnails/interview-notification.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "ev-dashboard",
+  "thumbnail": "thumbnails/ev-dashboard.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "emergency-report",
+  "thumbnail": "thumbnails/emergency-report.png",
+  "w": 462,
+  "h": 934,
+  "fit": true
+ },
+ {
+  "id": "voice-assistant",
+  "thumbnail": "thumbnails/speech-ai.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "meeting-companion",
+  "thumbnail": "thumbnails/meeting-companion.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "workplace-log",
+  "thumbnail": "thumbnails/workplace-log.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ },
+ {
+  "id": "smartwatch-feedback",
+  "thumbnail": "thumbnails/smartwatch-feedback.png",
+  "w": 440,
+  "h": 580,
+  "fit": false
+ },
+ {
+  "id": "emotion-popup",
+  "thumbnail": "thumbnails/emotion-popup.png",
+  "w": 1024,
+  "h": 700,
+  "fit": false
+ }
+]

@@ -1,0 +1,14 @@
+{
+ "extended-turntaking": 1024,
+ "facial-turntaking": 1024,
+ "feedback-plugin": 1128,
+ "interview-tool": 1024,
+ "interview-notification": 1024,
+ "ev-dashboard": 1152,
+ "emergency-report": 1240,
+ "voice-assistant": 1120,
+ "meeting-companion": 1024,
+ "workplace-log": 1128,
+ "smartwatch-feedback": 1100,
+ "emotion-popup": 1024
+}
