@@ -147,8 +147,8 @@ export const prototypes = [
     page: true,
     title: { en: 'Accessible Phone Service', zh: '无障碍电话服务系统' },
     description: {
-      en: 'An accessible communication-support service for people who stutter when making emergency calls (police, ambulance). It offers extended wait times and patient voice guidance from operators trained in communication, so callers can express themselves smoothly in an emergency. Beyond voice calls, users can file a silent text report, share their precise location, upload video or photos as evidence, and track the case status.',
-      zh: '为口吃者在拨打紧急电话（如报警、急救）时设计的无障碍沟通支持服务。系统提供延长等待时间和耐心的语音引导，由接受过沟通培训的客服人员对接，确保口吃者在紧急情况下能够顺畅表达。除了语音呼叫外，用户还可以选择紧急文字报警（发送静默紧急消息）、共享精确位置、上传视频或照片作为证据，并跟踪案件状态。',
+      en: 'An accessible communication-support service for people who stutter when making emergency calls (police, ambulance). It offers extended wait times and patient voice guidance from operators trained in communication, so callers can express themselves smoothly in an emergency. Beyond voice calls, users can file a text report, share their precise location, upload video or photos as evidence, and track the case status.',
+      zh: '为口吃者在拨打紧急电话（如报警、急救）时设计的无障碍沟通支持服务。系统提供延长等待时间和耐心的语音引导，由接受过沟通培训的客服人员对接，确保口吃者在紧急情况下能够顺畅表达。除了语音呼叫外，用户还可以选择紧急文字报警（发送紧急消息）、共享精确位置、上传视频或照片作为证据，并跟踪案件状态。',
     },
     thumbnail: 'thumbnails/emergency-report.png',
     ...fig('389-958'),

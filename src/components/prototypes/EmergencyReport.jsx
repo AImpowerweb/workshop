@@ -397,10 +397,10 @@ export default function EmergencyReport() {
               </div>
             </div>
 
-            {/* Silent text report */}
+            {/* Text report */}
             <button
               type="button"
-              onClick={() => showToast({ en: 'Silent text report opened', zh: '已开启静默文字报警' })}
+              onClick={() => showToast({ en: 'Text report opened', zh: '已开启文字报警' })}
               className="flex items-center justify-between rounded-2xl border border-[#6b7382] p-[21px] text-left shadow transition hover:brightness-110"
               style={{ backgroundImage: 'linear-gradient(90deg, #364054 0%, #4a5466 100%)' }}
             >
@@ -409,8 +409,8 @@ export default function EmergencyReport() {
                   <img src={ICON + 'message.svg'} alt="" className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">{t({ en: 'Silent Text Report', zh: '紧急文字报警' })}</h3>
-                  <p className="text-sm text-[#d1d6db]">{t({ en: 'Send a silent emergency message', zh: '发送静默紧急消息' })}</p>
+                  <h3 className="text-lg font-bold">{t({ en: 'Text Report', zh: '紧急文字报警' })}</h3>
+                  <p className="text-sm text-[#d1d6db]">{t({ en: 'Send an emergency message', zh: '发送紧急消息' })}</p>
                 </div>
               </div>
               <span className="text-lg text-white/80">›</span>
