@@ -118,16 +118,27 @@ export const content = {
       zh: '这是介绍团队的占位文字。请替换为简短的段落，说明你们是谁——本项目背后的研究者、设计师与合作伙伴——以及是什么让你们因包容、对口吃者友好的设计而走到一起。',
     },
     // Names and affiliations are proper nouns — only the role labels translate.
+    //
+    // Researchers are grouped by institution. Add a `photo` to any member to
+    // show their portrait instead of the initials placeholder, e.g.
+    //   { name: 'Shaomei Wu', photo: 'assets/team/shaomei-wu.jpg' }
+    // Paths are relative to `public/` and resolved against the site base URL.
     groups: [
       {
         label: { en: 'Research Team', zh: '研究团队' },
-        members: [
-          { name: 'Shaomei Wu', org: 'AImpower.org' },
-          { name: 'Norman Makoto Su', org: 'University of California, Santa Cruz' },
-          { name: 'Peiyao Liu', org: 'University of California, Santa Cruz' },
-          { name: 'Jingjin Li', org: 'AImpower.org' },
-          { name: 'Rebecca Lietz', org: 'University of California, Santa Cruz' },
-          { name: 'Jennifer Chien', org: 'Stanford University' },
+        orgs: [
+          {
+            org: 'AImpower.org',
+            members: [{ name: 'Jingjin Li' }, { name: 'Shaomei Wu' }],
+          },
+          {
+            org: 'University of California, Santa Cruz',
+            members: [{ name: 'Peiyao Liu' }, { name: 'Rebecca Lietz' }, { name: 'Norman Makoto Su' }],
+          },
+          {
+            org: 'Stanford University',
+            members: [{ name: 'Jennifer Chien' }],
+          },
         ],
       },
       {
@@ -136,9 +147,12 @@ export const content = {
       },
       {
         label: { en: 'Partner', zh: '合作伙伴' },
+        // Set `logo` to show the partner's mark instead of a lettermark, e.g.
+        //   logo: 'assets/team/gcsa-logo.png'
         members: [
           {
             name: 'The Global Chinese Stuttering Association',
+            lettermark: 'GCSA',
             note: { en: 'formerly StammerTalk 口吃说', zh: '前身为 StammerTalk 口吃说' },
           },
         ],
