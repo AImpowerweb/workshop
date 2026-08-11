@@ -18,11 +18,14 @@ function initials(name) {
  */
 function Person({ member, note }) {
   const src = member.photo ? `${import.meta.env.BASE_URL}${member.photo}` : null;
-  // Left-aligned so the circle sits at the cell's leading edge: cells vary in
-  // width with the name length, and centring would knock the circles out of
-  // line with the rows above.
+  // From `sm:` up the circle sits at the cell's leading edge, so cells of
+  // differing width still line their circles up down the column. On phones the
+  // rows stack and are centred, so the cell centres its contents instead.
   return (
-    <li className="flex w-[112px] flex-col items-start" style={{ width: member.note ? 200 : undefined }}>
+    <li
+      className="flex w-[112px] flex-col items-center text-center sm:items-start sm:text-left"
+      style={{ width: member.note ? 200 : undefined }}
+    >
       {src ? (
         <img
           src={src}
@@ -47,7 +50,7 @@ function Person({ member, note }) {
 
 function PeopleRow({ members, note }) {
   return (
-    <ul className="flex flex-wrap gap-x-7 gap-y-6">
+    <ul className="flex flex-wrap justify-center gap-x-7 gap-y-6 sm:justify-start">
       {members.map((m) => (
         <Person key={m.name} member={m} note={note} />
       ))}
@@ -63,7 +66,9 @@ function PeopleRow({ members, note }) {
 function RosterRow({ label, members, note }) {
   return (
     <div className="grid grid-cols-1 items-start gap-x-8 gap-y-3 sm:grid-cols-[13rem_1fr]">
-      <p className="pt-6 text-sm font-semibold leading-snug text-slate-600">{label}</p>
+      <p className="text-center text-sm font-semibold leading-snug text-slate-600 sm:pt-6 sm:text-left">
+        {label}
+      </p>
       <PeopleRow members={members} note={note} />
     </div>
   );
@@ -122,7 +127,7 @@ export default function IntroSection({ id, section, alt = false }) {
         {/* Roster reads left-to-right — affiliation, then that group's people —
             so it is left-aligned inside the otherwise centred section. */}
         {section.groups?.length > 0 && (
-          <div className="mx-auto mt-12 max-w-2xl space-y-10 text-left">
+          <div className="mx-auto mt-12 max-w-2xl space-y-10 text-center sm:text-left">
             {section.groups.map((group) => (
               <div key={group.label.en}>
                 <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
