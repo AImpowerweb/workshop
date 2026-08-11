@@ -32,7 +32,12 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # enablement lets the workflow turn Pages on itself using the job's
+      # `pages: write` token, so nobody needs repo-admin rights to flip the
+      # switch by hand before the first deploy.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
