@@ -18,8 +18,11 @@ function initials(name) {
  */
 function Person({ member, note }) {
   const src = member.photo ? `${import.meta.env.BASE_URL}${member.photo}` : null;
+  // Left-aligned so the circle sits at the cell's leading edge: cells vary in
+  // width with the name length, and centring would knock the circles out of
+  // line with the rows above.
   return (
-    <li className="flex w-[120px] max-w-[190px] flex-col items-center" style={{ width: member.note ? 190 : undefined }}>
+    <li className="flex w-[112px] flex-col items-start" style={{ width: member.note ? 200 : undefined }}>
       {src ? (
         <img
           src={src}
@@ -42,13 +45,27 @@ function Person({ member, note }) {
   );
 }
 
-function PeopleRow({ members, note, className = 'mt-4' }) {
+function PeopleRow({ members, note }) {
   return (
-    <ul className={`flex flex-wrap justify-center gap-x-8 gap-y-7 ${className}`}>
+    <ul className="flex flex-wrap gap-x-7 gap-y-6">
       {members.map((m) => (
         <Person key={m.name} member={m} note={note} />
       ))}
     </ul>
+  );
+}
+
+/**
+ * One roster line: the affiliation on the left, that group's portraits in a row
+ * beside it. A shared column width keeps every row of circles starting at the
+ * same x, including groups with no affiliation label (Designer, Partner).
+ */
+function RosterRow({ label, members, note }) {
+  return (
+    <div className="grid grid-cols-1 items-start gap-x-8 gap-y-3 sm:grid-cols-[13rem_1fr]">
+      <p className="pt-6 text-sm font-semibold leading-snug text-slate-600">{label}</p>
+      <PeopleRow members={members} note={note} />
+    </div>
   );
 }
 
@@ -102,27 +119,28 @@ export default function IntroSection({ id, section, alt = false }) {
           </a>
         )}
 
+        {/* Roster reads left-to-right — affiliation, then that group's people —
+            so it is left-aligned inside the otherwise centred section. */}
         {section.groups?.length > 0 && (
-          <div className="mt-12 space-y-12">
+          <div className="mx-auto mt-12 max-w-2xl space-y-10 text-left">
             {section.groups.map((group) => (
               <div key={group.label.en}>
                 <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
                   {t(group.label)}
                 </p>
 
-                {/* Researchers are nested by institution; other groups are flat. */}
-                {group.orgs ? (
-                  <div className="mt-6 space-y-8">
-                    {group.orgs.map((entry) => (
-                      <div key={entry.org}>
-                        <p className="text-sm font-semibold text-slate-500">{entry.org}</p>
-                        <PeopleRow members={entry.members} />
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <PeopleRow members={group.members} note={t} className="mt-6" />
-                )}
+                {/* Researchers are split by institution; other groups are flat
+                    and leave the affiliation column empty so the circles stay
+                    aligned with the rows above. */}
+                <div className="mt-4 space-y-6">
+                  {group.orgs ? (
+                    group.orgs.map((entry) => (
+                      <RosterRow key={entry.org} label={entry.org} members={entry.members} />
+                    ))
+                  ) : (
+                    <RosterRow label="" members={group.members} note={t} />
+                  )}
+                </div>
               </div>
             ))}
           </div>
