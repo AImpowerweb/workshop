@@ -12,37 +12,73 @@ function initials(name) {
 }
 
 /**
- * One person: a portrait circle above their name. Photos aren't available yet,
- * so the circle carries their initials — a deliberate placeholder rather than an
- * empty hole. Give a member a `photo` and it renders instead, no layout change.
+ * One roster entry: a mark above the name.
+ *
+ * People get an 80px circle — their `photo` if one exists, otherwise their
+ * initials as a deliberate placeholder rather than an empty hole. An
+ * organisation instead sets `logo`, which is a wide lockup rather than a
+ * portrait, so it renders on a white card at its own aspect ratio. `url` makes
+ * the whole entry a link out to them.
  */
 function Person({ member, note }) {
-  const src = member.photo ? `${import.meta.env.BASE_URL}${member.photo}` : null;
-  // From `sm:` up the circle sits at the cell's leading edge, so cells of
-  // differing width still line their circles up down the column. On phones the
-  // rows stack and are centred, so the cell centres its contents instead.
-  return (
-    <li
-      className="flex w-[112px] flex-col items-center text-center sm:items-start sm:text-left"
-      style={{ width: member.note ? 200 : undefined }}
+  const asset = (p) => `${import.meta.env.BASE_URL}${p}`;
+
+  const mark = member.logo ? (
+    // Height follows the logo's own aspect rather than matching the 80px
+    // circles: a wide lockup squeezed to that height is too small to read.
+    <span className="block w-[200px] rounded-xl bg-white p-3 shadow-sm ring-1 ring-black/5">
+      <img src={asset(member.logo)} alt="" className="block w-full" />
+    </span>
+  ) : member.photo ? (
+    <img
+      src={asset(member.photo)}
+      alt=""
+      className="h-20 w-20 rounded-full object-cover shadow-sm ring-1 ring-black/5"
+    />
+  ) : (
+    <span
+      aria-hidden="true"
+      className="flex h-20 w-20 items-center justify-center rounded-full bg-blush text-lg font-semibold tracking-wide text-brand-700 ring-1 ring-black/5"
     >
-      {src ? (
-        <img
-          src={src}
-          alt=""
-          className="h-20 w-20 rounded-full object-cover shadow-sm ring-1 ring-black/5"
-        />
-      ) : (
-        <span
-          aria-hidden="true"
-          className="flex h-20 w-20 items-center justify-center rounded-full bg-blush text-lg font-semibold tracking-wide text-brand-700 ring-1 ring-black/5"
-        >
-          {member.lettermark || initials(member.name)}
-        </span>
-      )}
-      <span className="mt-3 text-sm font-medium leading-snug text-black">{member.name}</span>
+      {member.lettermark || initials(member.name)}
+    </span>
+  );
+
+  const body = (
+    <>
+      {mark}
+      <span
+        className={`mt-3 text-sm font-medium leading-snug ${
+          member.url ? 'text-brand-700 underline decoration-brand-300 underline-offset-2' : 'text-black'
+        }`}
+      >
+        {member.name}
+      </span>
       {member.note && note && (
         <span className="mt-1 text-xs leading-snug text-slate-500">({note(member.note)})</span>
+      )}
+    </>
+  );
+
+  // From `sm:` up the mark sits at the cell's leading edge, so cells of
+  // differing width still line up down the column. On phones the rows stack and
+  // are centred, so the cell centres its contents instead.
+  const cell = 'flex w-[112px] flex-col items-center text-center sm:items-start sm:text-left';
+  const width = member.logo ? 200 : member.note ? 200 : undefined;
+
+  return (
+    <li className={cell} style={{ width }}>
+      {member.url ? (
+        <a
+          href={member.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center transition hover:opacity-90 sm:items-start"
+        >
+          {body}
+        </a>
+      ) : (
+        body
       )}
     </li>
   );

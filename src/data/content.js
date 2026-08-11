@@ -132,7 +132,9 @@ export const content = {
             members: [{ name: 'Jingjin Li' }, { name: 'Shaomei Wu' }],
           },
           {
-            org: 'University of California, Santa Cruz',
+            // Non-breaking space keeps "Santa Cruz" whole, so the label wraps
+            // after the comma rather than splitting the city name.
+            org: 'University of California, Santa Cruz',
             members: [{ name: 'Peiyao Liu' }, { name: 'Rebecca Lietz' }, { name: 'Norman Makoto Su' }],
           },
           {
@@ -152,7 +154,8 @@ export const content = {
         members: [
           {
             name: 'The Global Chinese Stuttering Association',
-            lettermark: 'GCSA',
+            logo: 'assets/team/gcsa-stammertalk-logo.png',
+            url: 'https://www.globalchinesestuttering.org/',
             note: { en: 'formerly StammerTalk 口吃说', zh: '前身为 StammerTalk 口吃说' },
           },
         ],
