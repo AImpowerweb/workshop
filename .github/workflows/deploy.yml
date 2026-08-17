@@ -13,10 +13,12 @@ permissions:
   pages: write
   id-token: write
 
-# Let a running deploy finish rather than cancelling it midway.
+# Supersede an in-flight run rather than queueing behind it. Pages allows only
+# one deployment at a time and rejects a second with "in progress deployment",
+# so letting the older run finish just makes the newer one fail.
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
