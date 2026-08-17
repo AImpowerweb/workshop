@@ -301,8 +301,10 @@ export const content = {
 
   footer: {
     tagline: {
+      // Kept in English in both languages — it is the organisation's own
+      // strapline, not body copy to be translated.
       en: 'Amplify marginalized voices in technology',
-      zh: '放大技术领域中被边缘化的声音',
+      zh: 'Amplify marginalized voices in technology',
     },
     rights: {
       en: '© 2026 AImpower.org. All rights reserved.',
