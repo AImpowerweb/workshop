@@ -17,8 +17,8 @@ export const content = {
   hero: {
     eyebrow: { en: 'Research Showcase', zh: '研究展示' },
     title: {
-      en: 'Designing for Everyone, Together',
-      zh: '与所有人一起，共创设计',
+      en: 'Designing Beyond Perfect Speech',
+      zh: '超越「完美表达」的设计',
     },
     subtitle: {
       en: 'A collection of interactive prototypes exploring how thoughtful interface design can be more inclusive, accessible, and human.',
@@ -26,25 +26,25 @@ export const content = {
     },
     body: [
       {
-        en: 'This is placeholder text for the research introduction. Replace it with a short paragraph describing the goal of the study, the questions it explores, and who it is for. You can keep it to two or three sentences.',
-        zh: '这是研究介绍的占位文字。请替换为简短的段落，说明本研究的目标、所探讨的问题以及面向的对象。两到三句话即可。',
+        en: 'Speech technology is built for one kind of voice — quick, continuous, done inside the time limit. For the 1% of adults who stutter, that turns everyday tools into obstacles: calls cut off mid-sentence, transcripts that mishear a repeated word.',
+        zh: '语音技术是为某一种声音设计的——说得快、不停顿、在规定时间内说完。对全球约 1% 的口吃者来说，这让日常工具变成了障碍：话说到一半被切断、重复的词被听错。',
       },
       {
-        en: 'Each prototype below is a fully coded, interactive concept — click any card to open it right here and try it yourself.',
-        zh: '下方的每个原型都是完整编码、可交互的概念——点击任意卡片即可在本页打开并亲自体验。',
+        en: 'We asked the stuttering community in China a different question — not how to fix stuttered speech, but what they would build if speaking perfectly had never been the standard. A survey of 53, then co-design workshops with 13. Every prototype below came out of those sessions; open any card to try one.',
+        zh: '我们向中国的口吃社群提出了另一个问题：不是如何「修正」口吃，而是如果「说得完美」从来不是标准，他们会做出什么。53 位参与问卷，13 位参与共创工作坊。下方每个原型都源自这些工作坊——点击任意卡片即可体验。',
       },
     ],
     note: {
-      en: '✱ Placeholder text — final copy coming soon.',
-      zh: '✱ 占位文字 —— 最终内容即将更新。',
+      en: '✱ Findings to be published at ASSETS ’26.',
+      zh: '✱ 研究成果将发表于 ASSETS ’26。',
     },
   },
 
   prototypes: {
     sectionTitle: { en: 'Prototypes', zh: '原型展示' },
     sectionSubtitle: {
-      en: 'Interactive concepts across four scenarios. Click a card to open its page and try the live prototype.',
-      zh: '涵盖四种场景的互动概念。点击卡片即可打开对应页面并体验在线原型。',
+      en: 'Concepts designed in the workshops, across meetings, interviews, everyday calls and emotional support. Each is a working interface, not a mockup — click a card to open its page and use it.',
+      zh: '这些概念都诞生于共创工作坊，涵盖会议、面试、日常通话与情绪支持等场景。每一个都是可运行的真实界面，而非静态示意图——点击卡片即可打开页面并亲自操作。',
     },
     openLabel: { en: 'Open prototype', zh: '打开原型' },
     comingSoon: { en: 'Coming soon', zh: '敬请期待' },
@@ -166,8 +166,8 @@ export const content = {
   workshop: {
     title: { en: 'About Workshop', zh: '关于工作坊' },
     body: {
-      en: 'This is placeholder text introducing the workshop. Replace it with a short paragraph about the workshop — its goals, who takes part, and how these prototypes grew out of sessions with people who stutter and the people around them.',
-      zh: '这是介绍工作坊的占位文字。请替换为简短的段落，说明工作坊的目标、参与的人群，以及这些原型如何在与口吃者及其身边人的共创中逐步成形。',
+      en: 'Thirteen people who stutter spent a series of sessions designing the speech technology they actually wanted. Asked to design for the world as it is, they built tools to help themselves pass as fluent — earpieces that smoothed their speech, assistants that spoke on their behalf. So we sent them somewhere else: a planet where everyone stutters, and stuttering is simply how people talk. The designs changed completely.',
+      zh: '13 位口吃者用一系列共创工作坊，设计他们真正想要的语音技术。当我们请他们为「现在的世界」设计时，他们做出的是帮自己听起来更流利的工具——把语音变顺畅的耳机、代替自己说话的助手。于是我们把他们带到了另一个地方：一颗人人都口吃的星球，口吃就是大家说话的方式。设计随之彻底改变。',
     },
     cta: {
       label: { en: 'Read the workshop story', zh: '阅读工作坊故事' },
