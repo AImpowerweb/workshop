@@ -18,12 +18,6 @@ export default function Header() {
 
         <nav className="hidden items-center gap-6 md:flex">
           <a
-            href="#about"
-            className="text-sm font-medium text-slate-600 transition hover:text-black"
-          >
-            {t(content.nav.about)}
-          </a>
-          <a
             href="#prototypes"
             className="text-sm font-medium text-slate-600 transition hover:text-black"
           >

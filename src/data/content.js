@@ -8,10 +8,9 @@ export const content = {
   brand: { en: 'AIMpower', zh: 'AIMpower' },
 
   nav: {
-    about: { en: 'About', zh: '关于' },
     prototypes: { en: 'Prototypes', zh: '原型' },
-    team: { en: 'About Team', zh: '关于团队' },
-    workshop: { en: 'About Workshop', zh: '关于工作坊' },
+    team: { en: 'Team', zh: '团队' },
+    workshop: { en: 'Workshop', zh: '工作坊' },
   },
 
   hero: {
