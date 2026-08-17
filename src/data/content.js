@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const content = {
-  brand: { en: 'AIMpower', zh: 'AIMpower' },
+  brand: { en: 'AImpower.org', zh: 'AImpower.org' },
 
   nav: {
     prototypes: { en: 'Prototypes', zh: '原型' },
