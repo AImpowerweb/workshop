@@ -292,12 +292,12 @@ export const content = {
 
   footer: {
     tagline: {
-      en: 'Inclusive design research.',
-      zh: '包容性设计研究。',
+      en: 'Amplify marginalized voices in technology',
+      zh: '放大技术领域中被边缘化的声音',
     },
     rights: {
-      en: '© 2026 AIMpower. All rights reserved.',
-      zh: '© 2026 AIMpower. 保留所有权利。',
+      en: '© 2026 AImpower.org. All rights reserved.',
+      zh: '© 2026 AImpower.org. 保留所有权利。',
     },
   },
 };
