@@ -128,36 +128,45 @@ export const content = {
         orgs: [
           {
             org: 'AImpower.org',
-            members: [{ name: 'Jingjin Li' }, { name: 'Shaomei Wu' }],
+            members: [
+              { name: 'Jingjin Li', photo: 'assets/team/jingjin-li.jpg' },
+              { name: 'Shaomei Wu', photo: 'assets/team/shaomei-wu.jpg' },
+            ],
           },
           {
             // Non-breaking space keeps "Santa Cruz" whole, so the label wraps
             // after the comma rather than splitting the city name.
             org: 'University of California, Santa Cruz',
-            members: [{ name: 'Peiyao Liu' }, { name: 'Rebecca Lietz' }, { name: 'Norman Makoto Su' }],
+            members: [
+              { name: 'Peiyao Liu', photo: 'assets/team/peiyao-liu.jpg' },
+              { name: 'Rebecca Lietz', photo: 'assets/team/rebecca-lietz.jpg' },
+              { name: 'Norman Makoto Su', photo: 'assets/team/norman-makoto-su.jpg' },
+            ],
           },
           {
             org: 'Stanford University',
-            members: [{ name: 'Jennifer Chien' }],
+            members: [{ name: 'Jennifer Chien', photo: 'assets/team/jennifer-chien.jpg' }],
           },
         ],
       },
       {
-        label: { en: 'Designer', zh: '设计师' },
-        members: [{ name: 'Chia-Ying Tsai' }],
-      },
-      {
         label: { en: 'Partner', zh: '合作伙伴' },
-        // Set `logo` to show the partner's mark instead of a lettermark, e.g.
-        //   logo: 'assets/team/gcsa-logo.png'
         members: [
           {
             name: 'The Global Chinese Stuttering Association',
-            logo: 'assets/team/gcsa-stammertalk-logo.png',
+            // Square crop of just the GCSA mark — the full lockup also carries
+            // the StammerTalk half, which is illegible inside an 80px circle.
+            logo: 'assets/team/gcsa-logo.png',
             url: 'https://www.globalchinesestuttering.org/',
             note: { en: 'formerly StammerTalk 口吃说', zh: '前身为 StammerTalk 口吃说' },
           },
         ],
+      },
+      {
+        // Credit line rather than a portrait: `nameOnly` drops the circle.
+        label: { en: 'Designer', zh: '设计师' },
+        nameOnly: true,
+        members: [{ name: 'Chia-Ying Tsai' }],
       },
     ],
   },

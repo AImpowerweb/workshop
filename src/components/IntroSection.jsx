@@ -14,20 +14,19 @@ function initials(name) {
 /**
  * One roster entry: a mark above the name.
  *
- * People get an 80px circle — their `photo` if one exists, otherwise their
- * initials as a deliberate placeholder rather than an empty hole. An
- * organisation instead sets `logo`, which is a wide lockup rather than a
- * portrait, so it renders on a white card at its own aspect ratio. `url` makes
- * the whole entry a link out to them.
+ * Everyone gets the same 80px circle — a `photo` if one exists, a `logo` for an
+ * organisation, otherwise initials as a deliberate placeholder rather than an
+ * empty hole. A group marked `nameOnly` skips the circle entirely. `url` makes
+ * the whole entry a link out.
  */
-function Person({ member, note }) {
+function Person({ member, note, nameOnly }) {
   const asset = (p) => `${import.meta.env.BASE_URL}${p}`;
 
-  const mark = member.logo ? (
-    // Height follows the logo's own aspect rather than matching the 80px
-    // circles: a wide lockup squeezed to that height is too small to read.
-    <span className="block w-[200px] rounded-xl bg-white p-3 shadow-sm ring-1 ring-black/5">
-      <img src={asset(member.logo)} alt="" className="block w-full" />
+  const mark = nameOnly ? null : member.logo ? (
+    // Same circle as the portraits, white behind so the mark reads on the
+    // tinted section background.
+    <span className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-white p-2.5 shadow-sm ring-1 ring-black/5">
+      <img src={asset(member.logo)} alt="" className="max-h-full max-w-full object-contain" />
     </span>
   ) : member.photo ? (
     <img
@@ -64,7 +63,7 @@ function Person({ member, note }) {
   // differing width still line up down the column. On phones the rows stack and
   // are centred, so the cell centres its contents instead.
   const cell = 'flex w-[112px] flex-col items-center text-center sm:items-start sm:text-left';
-  const width = member.logo ? 200 : member.note ? 200 : undefined;
+  const width = member.note ? 200 : undefined;
 
   return (
     <li className={cell} style={{ width }}>
@@ -84,11 +83,11 @@ function Person({ member, note }) {
   );
 }
 
-function PeopleRow({ members, note }) {
+function PeopleRow({ members, note, nameOnly }) {
   return (
     <ul className="flex flex-wrap justify-center gap-x-7 gap-y-6 sm:justify-start">
       {members.map((m) => (
-        <Person key={m.name} member={m} note={note} />
+        <Person key={m.name} member={m} note={note} nameOnly={nameOnly} />
       ))}
     </ul>
   );
@@ -99,13 +98,13 @@ function PeopleRow({ members, note }) {
  * beside it. A shared column width keeps every row of circles starting at the
  * same x, including groups with no affiliation label (Designer, Partner).
  */
-function RosterRow({ label, members, note }) {
+function RosterRow({ label, members, note, nameOnly }) {
   return (
     <div className="grid grid-cols-1 items-start gap-x-8 gap-y-3 sm:grid-cols-[13rem_1fr]">
-      <p className="text-center text-sm font-semibold leading-snug text-slate-600 sm:pt-6 sm:text-left">
+      <p className={`text-center text-sm font-semibold leading-snug text-slate-600 sm:text-left ${nameOnly ? '' : 'sm:pt-6'}`}>
         {label}
       </p>
-      <PeopleRow members={members} note={note} />
+      <PeopleRow members={members} note={note} nameOnly={nameOnly} />
     </div>
   );
 }
@@ -179,7 +178,7 @@ export default function IntroSection({ id, section, alt = false }) {
                       <RosterRow key={entry.org} label={entry.org} members={entry.members} />
                     ))
                   ) : (
-                    <RosterRow label="" members={group.members} note={t} />
+                    <RosterRow label="" members={group.members} note={t} nameOnly={group.nameOnly} />
                   )}
                 </div>
               </div>
