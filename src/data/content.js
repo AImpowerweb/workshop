@@ -99,10 +99,6 @@ export const content = {
     platform: { en: 'Platform', zh: '平台' },
     status: { en: 'Status', zh: '状态' },
     statusValue: { en: 'Research concept', zh: '研究概念' },
-    disclaimer: {
-      en: '✱ This is a coded research prototype — responses are scripted for demonstration; no real AI runs behind it.',
-      zh: '✱ 这是一个编码研究原型——反馈为演示脚本，背后并未运行真实 AI。',
-    },
     notFound: {
       en: 'Prototype not found.',
       zh: '未找到该原型。',

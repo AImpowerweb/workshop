@@ -94,9 +94,12 @@ function PeopleRow({ members, note, nameOnly }) {
 }
 
 /**
- * One roster line: the affiliation on the left, that group's portraits in a row
- * beside it. A shared column width keeps every row of circles starting at the
- * same x, including groups with no affiliation label (Designer, Partner).
+ * One roster line: the label on the left — an affiliation, or a flat group's own
+ * heading — with that row's marks beside it. A shared column width keeps every
+ * row of circles starting at the same x.
+ *
+ * `sm:pt-6` drops the label to the circle's vertical middle; a `nameOnly` row has
+ * no circle to centre against, so it skips the padding.
  */
 function RosterRow({ label, members, note, nameOnly }) {
   return (
@@ -164,9 +167,22 @@ export default function IntroSection({ id, section, alt = false }) {
         {section.groups?.length > 0 && (
           <div className="mx-auto mt-12 max-w-2xl space-y-10 text-center sm:text-left">
             {section.groups.map((group) =>
-              /* A name-only group is a one-line credit: its heading sits in the
-                 label column beside the name, rather than above an empty row. */
-              group.nameOnly ? (
+              /* Only a group split by institution needs a heading on a line of
+                 its own, above its affiliation rows. A flat group has nothing to
+                 put in the affiliation column, so its heading goes there instead
+                 — level with its own mark rather than stranded above it. */
+              group.orgs ? (
+                <div key={group.label.en}>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
+                    {t(group.label)}
+                  </p>
+                  <div className="mt-4 space-y-6">
+                    {group.orgs.map((entry) => (
+                      <RosterRow key={entry.org} label={entry.org} members={entry.members} />
+                    ))}
+                  </div>
+                </div>
+              ) : (
                 <RosterRow
                   key={group.label.en}
                   label={
@@ -176,27 +192,8 @@ export default function IntroSection({ id, section, alt = false }) {
                   }
                   members={group.members}
                   note={t}
-                  nameOnly
+                  nameOnly={group.nameOnly}
                 />
-              ) : (
-                <div key={group.label.en}>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
-                    {t(group.label)}
-                  </p>
-
-                  {/* Researchers are split by institution; other groups are flat
-                      and leave the affiliation column empty so the circles stay
-                      aligned with the rows above. */}
-                  <div className="mt-4 space-y-6">
-                    {group.orgs ? (
-                      group.orgs.map((entry) => (
-                        <RosterRow key={entry.org} label={entry.org} members={entry.members} />
-                      ))
-                    ) : (
-                      <RosterRow label="" members={group.members} note={t} />
-                    )}
-                  </div>
-                </div>
               ),
             )}
           </div>

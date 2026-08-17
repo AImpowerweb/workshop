@@ -52,9 +52,12 @@ export default function PrototypePage({ id }) {
   // would just repeat the intro that already sits under the title.
   const discussion = prototype.discussion?.length ? prototype.discussion : null;
 
+  // The three-up strip under "Further information". Status is the same for every
+  // prototype, so it comes from the page copy rather than the registry.
   const facts = [
     { label: page.scenario, value: prototype.scenario },
     { label: page.platform, value: prototype.device },
+    { label: page.status, value: page.statusValue },
   ];
 
   return (
@@ -184,27 +187,25 @@ export default function PrototypePage({ id }) {
             {t(page.moreInfo)}
           </h2>
 
-          <div className="mt-4 grid gap-8 md:grid-cols-[1fr_260px]">
-            <div className="max-w-3xl space-y-4 leading-relaxed text-slate-600">
-              {(prototype.furtherInfo ?? []).map((paragraph, i) => (
+          {prototype.furtherInfo?.length > 0 && (
+            <div className="mt-4 max-w-3xl space-y-4 leading-relaxed text-slate-600">
+              {prototype.furtherInfo.map((paragraph, i) => (
                 <p key={i}>{t(paragraph)}</p>
               ))}
-              <p className="text-sm italic text-slate-400">{t(page.disclaimer)}</p>
             </div>
+          )}
 
-            <dl className="h-fit space-y-4 rounded-2xl border border-slate-200 bg-[#F6F2F2]/60 p-5 text-sm">
-              {facts.map((fact) => (
-                <div key={fact.label.en}>
-                  <dt className="font-medium text-stone-500">{t(fact.label)}</dt>
-                  <dd className="mt-0.5 font-semibold text-black">{t(fact.value)}</dd>
-                </div>
-              ))}
-              <div>
-                <dt className="font-medium text-stone-500">{t(page.status)}</dt>
-                <dd className="mt-0.5 font-semibold text-black">{t(page.statusValue)}</dd>
+          {/* The three facts read across rather than down. `flex-1` off a
+              min-width floor keeps the columns even while still letting them
+              wrap — to two, then one — once the labels stop fitting. */}
+          <dl className="mt-6 flex flex-wrap gap-x-10 gap-y-5 rounded-2xl border border-slate-200 bg-[#F6F2F2]/60 px-6 py-5 text-sm">
+            {facts.map((fact) => (
+              <div key={fact.label.en} className="min-w-[8rem] flex-1">
+                <dt className="font-medium text-stone-500">{t(fact.label)}</dt>
+                <dd className="mt-0.5 font-semibold text-black">{t(fact.value)}</dd>
               </div>
-            </dl>
-          </div>
+            ))}
+          </dl>
         </section>
       </div>
     </article>
