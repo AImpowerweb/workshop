@@ -12,8 +12,12 @@ export default function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-72 max-w-3xl rounded-full bg-blush/50 blur-3xl"
       />
-      <div className="relative mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <h1 className="text-4xl font-bold tracking-tight text-black md:text-5xl">
+      {/* Wider than the prose from `lg` up so the headline holds one line; the
+          subtitle and body keep their own max-w-2xl reading measure below. */}
+      <div className="relative mx-auto max-w-3xl px-6 py-20 text-center md:py-28 lg:max-w-4xl">
+        {/* Sized to fit on a single line from `md` up — it only wraps on phones,
+            where no readable size would keep it to one. */}
+        <h1 className="text-4xl font-bold tracking-tight text-black md:whitespace-nowrap md:text-[2.6rem] lg:text-5xl">
           {t(hero.title)}
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-600">
