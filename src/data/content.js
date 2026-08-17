@@ -17,21 +17,21 @@ export const content = {
   hero: {
     eyebrow: { en: 'Research Showcase', zh: '研究展示' },
     title: {
-      en: 'Designing Beyond Perfect Speech',
-      zh: '超越「完美表达」的设计',
+      en: 'Designing for Every Voice, Together',
+      zh: '为每一种声音，共同设计',
     },
     subtitle: {
-      en: 'A collection of interactive prototypes exploring how thoughtful interface design can be more inclusive, accessible, and human.',
-      zh: '一系列互动原型，探索如何通过用心的界面设计，让产品更具包容性、无障碍性与人性化。',
+      en: 'A collection of speech AI prototypes demonstrating how thoughtful interaction design can empower disfluent – and fluent – speakers.',
+      zh: '一系列语音 AI 原型，展示用心的交互设计如何为不流畅的——以及流畅的——说话者赋能。',
     },
     body: [
       {
-        en: 'Speech technology is built for one kind of voice — quick, continuous, done inside the time limit. For the 1% of adults who stutter, that turns everyday tools into obstacles: calls cut off mid-sentence, transcripts that mishear a repeated word.',
-        zh: '语音技术是为某一种声音设计的——说得快、不停顿、在规定时间内说完。对全球约 1% 的口吃者来说，这让日常工具变成了障碍：话说到一半被切断、重复的词被听错。',
+        en: 'Through a year-long, iterative co-design process with the Chinese stuttering community, we imagined and created a series of AI concepts together—grounded in the lived experiences, needs, and aspirations of people who stutter. These prototypes explore how AI can better support people who stutter across everyday and high-stakes situations—from conversations and job interviews to voice assistants and emergency communication.',
+        zh: '通过与中国口吃社群历时一年的迭代式共创设计，我们一起构想并创造了一系列 AI 概念——它们扎根于口吃者的真实经历、需求与愿景。这些原型探索 AI 如何在日常与高压情境中更好地支持口吃者——从日常对话、求职面试，到语音助手与紧急沟通。',
       },
       {
-        en: 'We asked the stuttering community in China a different question — not how to fix stuttered speech, but what they would build if speaking perfectly had never been the standard. A survey of 53, then co-design workshops with 13. Every prototype below came out of those sessions; open any card to try one.',
-        zh: '我们向中国的口吃社群提出了另一个问题：不是如何「修正」口吃，而是如果「说得完美」从来不是标准，他们会做出什么。53 位参与问卷，13 位参与共创工作坊。下方每个原型都源自这些工作坊——点击任意卡片即可体验。',
+        en: 'The prototypes below are all interactive. We invite you to click any card to explore it yourself. Together, we imagine: What could truly stuttering-friendly AI look like?',
+        zh: '下方的原型均可交互。我们邀请你点击任意卡片，亲自探索。让我们一起想象：真正对口吃友好的 AI，会是什么样子？',
       },
     ],
     note: {
