@@ -137,9 +137,12 @@ export default function IntroSection({ id, section, alt = false }) {
         <h2 className="text-3xl font-bold tracking-tight text-black">
           {t(section.title)}
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-slate-600">
-          {t(section.body)}
-        </p>
+        {/* Optional: the Team section is its roster, with no intro paragraph. */}
+        {section.body && (
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-slate-600">
+            {t(section.body)}
+          </p>
+        )}
 
         {section.cta && (
           <a

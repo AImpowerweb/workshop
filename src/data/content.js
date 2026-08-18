@@ -1,7 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
 //  PAGE COPY  —  edit this file to change all wording on the site.
 //  Every entry is { en: 'English', zh: '简体中文' }.
-//  The text below is PLACEHOLDER copy — replace it with your final wording.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const content = {
@@ -105,13 +104,10 @@ export const content = {
     },
   },
 
-  // Home-page sections after the prototypes — PLACEHOLDER copy, replace later.
+  // Home-page sections after the prototypes. Team is its roster alone — it has
+  // no `body`, and IntroSection skips the paragraph when one is absent.
   team: {
     title: { en: 'Our Team', zh: '我们的团队' },
-    body: {
-      en: 'This is placeholder text introducing the team. Replace it with a short paragraph about who you are — the researchers, designers, and collaborators behind this project — and what brings you together around inclusive, stutter-friendly design.',
-      zh: '这是介绍团队的占位文字。请替换为简短的段落，说明你们是谁——本项目背后的研究者、设计师与合作伙伴——以及是什么让你们因包容、对口吃者友好的设计而走到一起。',
-    },
     // Names and affiliations are proper nouns — only the role labels translate.
     //
     // Researchers are grouped by institution. Add a `photo` to any member to
