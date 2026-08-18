@@ -190,42 +190,11 @@ export const prototypes = [
     tags: ['Encouragement'],
     // Opens a dedicated page (#/prototype/meeting-companion) instead of the modal.
     page: true,
-    discussion: [
-      {
-        en: 'For many people who stutter, meetings are the most stressful part of the workday: the pressure to speak fluently in front of colleagues can weigh more than the content itself. This concept asks whether a small, deliberately cute companion — rather than a clinical tool — can lower that pressure in the moment.',
-        zh: '对许多口吃者来说，会议是一天中压力最大的时刻：在同事面前"说得流利"的压力，往往比发言内容本身更沉重。这个概念探讨的是——一位刻意设计得可爱、而非临床工具感的小伙伴，能否在当下减轻这种压力。',
-      },
-      {
-        en: 'The companion never measures or corrects speech. It simply notices that you spoke and responds with warm encouragement, framed around what you said rather than how you said it — "you bravely spoke your mind", never "you stuttered less today". There are no scores, streaks, or fluency metrics anywhere in the design.',
-        zh: '心伴从不测量或纠正言语。它只是注意到你发言了，并给予温暖的鼓励——关注你"说了什么"，而不是"说得怎么样"："你勇敢地说出了想法"，而绝不是"今天口吃少了"。整个设计中没有任何评分、打卡或流利度指标。',
-      },
-    ],
-    howToTry: [
-      {
-        en: 'Toggle "AI Companion" in the top bar to turn the companion on or off.',
-        zh: '点击顶栏的"AI 小助手"开关，可开启或关闭心伴。',
-      },
-      {
-        en: 'Press the 👍 button beside the companion to send yourself encouragement.',
-        zh: '点击心伴旁的 👍 按钮，为自己送出一句鼓励。',
-      },
-      {
-        en: 'Open ⚙ settings to switch between 小黄 and 小美, and choose how often feedback appears.',
-        zh: '打开 ⚙ 设置，可在小黄与小美之间切换，并选择鼓励出现的频率。',
-      },
-      {
-        en: 'Switch between the People and Chat tabs to explore the meeting panel.',
-        zh: '在"成员"与"聊天"标签间切换，浏览会议面板。',
-      },
-    ],
     furtherInfo: [
       {
-        en: 'The two companions, 小黄 (a teal-hooded plush) and 小美 (a pink plush), were designed to feel like a desk toy a colleague might keep beside their monitor — familiar, non-judgmental, and private. Encouragement appears only in your own corner of the meeting; other participants never see it.',
-        zh: '两位心伴——小黄（青绿色连帽绒偶）与小美（粉色绒偶）——的设计灵感来自同事摆在显示器旁的桌面玩偶：亲切、不评判、且完全私密。鼓励只出现在你自己的会议角落，其他参会者不会看到。',
-      },
-      {
-        en: 'Feedback frequency is user-controlled (at intervals, after each time you speak, or when the meeting starts) because participants in earlier concepts told us that unprompted AI messages can themselves become a source of pressure.',
-        zh: '鼓励频率完全由用户控制（按时间间隔、每次发言后、或会议开始时）——因为在早期概念测试中，参与者告诉我们：不受控的 AI 消息本身也可能成为新的压力来源。',
+        // English written to match the supplied Chinese — reword if it drifts.
+        en: 'After each meeting, the companion helps you record and organise how it felt — happy, confident, anxious, frustrated. You can write a log for any meeting, capturing how speaking went and the situation around it.',
+        zh: '在每次会议结束后，AI 小助手还会协助用户记录和整理本场会议的情绪体验（如开心、自信、紧张、沮丧等），用户可以为每场会议撰写日志，记下自己的表达感受和具体情境。',
       },
     ],
   },
